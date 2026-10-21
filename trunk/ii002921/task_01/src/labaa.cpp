@@ -3,7 +3,7 @@
 #include <cmath>
 #include <string>
 #include <clocale>
-#include <memory> // Добавлено для std::unique_ptr
+#include <memory>
 
 using namespace std;
 
@@ -15,16 +15,9 @@ using namespace std;
 class Model
 {
 public:
-    // Расчёт следующего значения y
     virtual double calculateNext(double y, double u, double dt) = 0;
-
-    // Название модели
     virtual string getName() const = 0;
-
-    // Сброс внутренних параметров модели
     virtual void reset() = 0;
-
-    // Виртуальный деструктор (используем = default по стандарту C++11)
     virtual ~Model() = default;
 };
 
@@ -37,24 +30,24 @@ public:
 class Model1_10 : public Model
 {
 private:
-    // Префикс m_ добавлен для избежания затенения (shadowing) параметров
     double m_a1;
     double m_b1;
     double m_b2;
-    double m_u_t_minus_1;
-    double m_u_t_minus_2;
+    
+    // ИСПРАВЛЕНИЕ 1: Инициализация внутри класса (in-class initializer)
+    double m_u_t_minus_1 = 0.0;
+    double m_u_t_minus_2 = 0.0;
 
 public:
-    // Инициализация через список инициализации (best practice)
+    // ИСПРАВЛЕНИЕ 1: Убрали m_u_t_minus_1 и m_u_t_minus_2 из списка инициализации
     Model1_10(double a1, double b1, double b2)
-        : m_a1(a1), m_b1(b1), m_b2(b2), m_u_t_minus_1(0.0), m_u_t_minus_2(0.0)
+        : m_a1(a1), m_b1(b1), m_b2(b2)
     {
     }
 
     double calculateNext(double y, double u, double dt) override
     {
-        (void)dt; // dt для этой модели не используется
-
+        (void)dt;
         double nextY = m_a1 * y + m_b1 * u + m_b2 * m_u_t_minus_2;
 
         m_u_t_minus_2 = m_u_t_minus_1;
@@ -149,13 +142,13 @@ public:
 
 double getInput(int type, int t)
 {
-    if (type == 1) return 1.0; // Ступенчатый
+    if (type == 1) return 1.0;
     
-    if (type == 2) {           // Импульсный
+    if (type == 2) {
         return (t == 0) ? 1.0 : 0.0;
     }
     
-    if (type == 3) return sin(t); // Гармонический
+    if (type == 3) return sin(t);
 
     return 0.0;
 }
@@ -232,23 +225,29 @@ int main()
         return 1;
     }
 
-    double y0, dt;
+    // ИСПРАВЛЕНИЕ 2: Каждая переменная объявлена в отдельном операторе
+    double y0;
     cout << "\nВведите начальное значение y: ";
     cin >> y0;
+    
+    double dt;
     cout << "Введите шаг времени dt: ";
     cin >> dt;
+    
     if (dt <= 0) {
         cout << "dt должен быть больше 0.\n";
         return 1;
     }
 
-    // ИСПОЛЬЗОВАНИЕ УМНОГО УКАЗАТЕЛЯ (std::unique_ptr)
-    // Это автоматически управляет памятью и избавляет от необходимости писать delete
     unique_ptr<Model> model = nullptr;
     string fileName;
 
     if (modelChoice == 1) {
-        double a1, b1, b2;
+        // ИСПРАВЛЕНИЕ 2: Раздельное объявление
+        double a1;
+        double b1;
+        double b2;
+        
         cout << "\nВведите коэффициенты Model 1.10:\na1 = "; cin >> a1;
         cout << "b1 = "; cin >> b1;
         cout << "b2 = "; cin >> b2;
@@ -257,7 +256,10 @@ int main()
         fileName = "model1_10.csv";
     }
     else if (modelChoice == 2) {
-        double a, b;
+        // ИСПРАВЛЕНИЕ 2: Раздельное объявление
+        double a;
+        double b;
+        
         cout << "\nВведите коэффициенты Model 2.4:\na = "; cin >> a;
         cout << "b = "; cin >> b;
         
@@ -265,7 +267,11 @@ int main()
         fileName = "model2_4.csv";
     }
     else if (modelChoice == 3) {
-        double a1, a2, b;
+        // ИСПРАВЛЕНИЕ 2: Раздельное объявление
+        double a1;
+        double a2;
+        double b;
+        
         cout << "\nВведите коэффициенты Model 3.8:\na1 = "; cin >> a1;
         cout << "a2 = "; cin >> a2;
         cout << "b = "; cin >> b;
@@ -278,12 +284,9 @@ int main()
         return 1;
     }
 
-    // Запускаем моделирование
     if (model) {
         simulate(*model, inputChoice, n, y0, dt, fileName);
     }
-
-    // delete model; <-- УДАЛЕНО. unique_ptr освободит память автоматически!
 
     cout << "\n==============================================\n";
     cout << "          Моделирование завершено.\n";
