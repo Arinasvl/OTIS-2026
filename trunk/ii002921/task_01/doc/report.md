@@ -8,7 +8,7 @@
 <p align="center"><strong>Тема:</strong> “Моделирования динамических систем”</p>
 <br><br><br><br><br>
 
-<div style="margin-left: auto; margin-right: -50px; width: fit-content; text-align: left;">
+<div style="margin-left: auto; margin-right: -50px; width: fit-content; text-align: right;">
 Выполнила:<br>
 Студентка 2 курса<br>
 Группы ИИ-29<br>
