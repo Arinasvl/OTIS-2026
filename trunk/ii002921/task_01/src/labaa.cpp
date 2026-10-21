@@ -4,6 +4,7 @@
 #include <string>
 #include <clocale>
 #include <memory>
+#include <cstdlib>
 
 using namespace std;
 
@@ -286,6 +287,7 @@ int main()
 
     if (model) {
         simulate(*model, inputChoice, n, y0, dt, fileName);
+        system("python plot.py");
     }
 
     cout << "\n==============================================\n";
