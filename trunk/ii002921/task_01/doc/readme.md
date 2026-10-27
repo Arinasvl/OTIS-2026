@@ -4,18 +4,19 @@
 <p align="center">Кафедра ИИТ</p>
 <br><br><br><br><br><br><br>
 <p align="center"><strong>Лабораторная работа №1</strong></p>
-<p align="center">**По дисциплине: “Общая теория интеллектуальных систем”**</p>
+<p align="center">"По дисциплине: “Общая теория интеллектуальных систем”</p>
 <p align="center"><strong>Тема:</strong> “Моделирования динамических систем”</p>
 <br><br><br><br><br>
 
-<div style="margin-left: auto; margin-right: -50px; width: fit-content; text-align: right;">
+<p align="right">
 Выполнила:<br>
 Студентка 2 курса<br>
 Группы ИИ-29<br>
 Савило А. А.<br>
+<br>
 Проверил:<br>
 Дворанинович Д. А.
-</div>
+</p>
 <br><br><br><br>
 <p align="center">Брест 2026</p>
 <br><br><br><br><br>
