@@ -413,7 +413,7 @@ pause
 
 ### Демонстрация модели 3.8 cо ступенчатым воздействием:
 
-![alt text](./img/graph_3.8.png)
+![alt text](./img/model_3.8.png)
 
 ![alt text](./img/values_3.8.png)
 
