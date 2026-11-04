@@ -39,4 +39,30 @@ bool checkDiscreteStability(const std::vector<double>& coeffs) {
                 num = num * roots[i] + p[j];
             }
 
-            std::
+            std::complex<double> den = 1.0;
+            for (int j = 0; j < n; ++j) {
+                // ИСПРАВЛЕНИЕ: используем continue вместо вложенного if
+                if (i == j) continue;
+
+                den *= (roots[i] - roots[j]);
+            }
+
+            if (std::abs(den) < 1e-14) continue;
+
+            std::complex<double> delta = num / den;
+            roots[i] -= delta;
+            max_delta = std::max(max_delta, std::abs(delta));
+        }
+        if (max_delta < 1e-10) break;
+    }
+
+    // Проверка условия: модуль каждого корня должен быть строго меньше 1.0
+    const double EPS = 1e-6;
+    for (int i = 0; i < n; ++i) {
+        if (std::abs(roots[i]) >= (1.0 - EPS)) {
+            return false; // Нашелся корень вне единичной окружности -> неустойчиво
+        }
+    }
+
+    return true;
+}
