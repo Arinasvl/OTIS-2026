@@ -4,15 +4,14 @@
 <p align="center">Кафедра ИИТ</p>
 <br><br><br><br><br><br><br>
 <p align="center"><strong>Лабораторная работа №1</strong></p>
-<p align="center">"По дисциплине: “Общая теория интеллектуальных систем”</p>
+<p align="center">По дисциплине: “Общая теория интеллектуальных систем”</p>
 <p align="center"><strong>Тема:</strong> “Моделирования динамических систем”</p>
 <br><br><br><br><br>
 
-<<<<<<<< HEAD:trunk/ii02921/task_01/doc/report.md
+
 <div style="margin-left: auto; margin-right: -50px; width: fit-content; text-align: right;">
-========
+
 <p align="right">
->>>>>>>> 658d4fd00ddbb2d7412c1b0e831376e7a4d7c484:trunk/ii002921/task_01/doc/readme.md
 Выполнила:<br>
 Студентка 2 курса<br>
 Группы ИИ-29<br>
