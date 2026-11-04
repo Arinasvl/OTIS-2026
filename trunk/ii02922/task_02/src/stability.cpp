@@ -8,6 +8,22 @@
 #define M_PI 3.14159265358979323846
 #endif
 
+// Вспомогательная функция для вычисления знаменателя
+// Это снижает уровень вложенности в основном цикле
+static std::complex<double> computeDenominator(
+    const std::vector<std::complex<double>>& roots,
+    int n,
+    int i
+) {
+    std::complex<double> den = 1.0;
+    for (int j = 0; j < n; ++j) {
+        if (i != j) {
+            den *= (roots[i] - roots[j]);
+        }
+    }
+    return den;
+}
+
 bool checkDiscreteStability(const std::vector<double>& coeffs) {
     int n = static_cast<int>(coeffs.size()) - 1;
     if (n <= 0) return true;
@@ -39,13 +55,8 @@ bool checkDiscreteStability(const std::vector<double>& coeffs) {
                 num = num * roots[i] + p[j];
             }
 
-            std::complex<double> den = 1.0;
-            for (int j = 0; j < n; ++j) {
-                // ИСПРАВЛЕНИЕ: используем continue вместо вложенного if
-                if (i == j) continue;
-
-                den *= (roots[i] - roots[j]);
-            }
+            // ИСПРАВЛЕНИЕ: вынесли вычисление знаменателя в отдельную функцию
+            std::complex<double> den = computeDenominator(roots, n, i);
 
             if (std::abs(den) < 1e-14) continue;
 
