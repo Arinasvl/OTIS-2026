@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="0" disabled="0" errors="0" timestamp="2026-11-04T03:31:14" time="0.001" name="AllTests">
+  <testsuite name="StabilityModuleTest" tests="2" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="StablePolynomial" status="run" time="0" classname="StabilityModuleTest" />
+    <testcase name="UnstablePolynomial" status="run" time="0" classname="StabilityModuleTest" />
+  </testsuite>
+  <testsuite name="InputSignalsTest" tests="3" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="StepSignal" status="run" time="0" classname="InputSignalsTest" />
+    <testcase name="ImpulseSignal" status="run" time="0" classname="InputSignalsTest" />
+    <testcase name="HarmonicSignal" status="run" time="0" classname="InputSignalsTest" />
+  </testsuite>
+  <testsuite name="Model1_10_Scenarios/Model1_10_ParamTest" tests="3" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="ConvergenceCheck/0" value_param="32-byte object &lt;00-00 00-00 00-00 F0-3F 00-00 00-00 00-00 F0-3F 9A-99 99-99 99-99 B9-3F 00-00 00-00 00-00 F8-3F&gt;" status="run" time="0" classname="Model1_10_Scenarios/Model1_10_ParamTest" />
+    <testcase name="ConvergenceCheck/1" value_param="32-byte object &lt;00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 9A-99 99-99 99-99 B9-3F 00-00 00-00 00-00 00-00&gt;" status="run" time="0" classname="Model1_10_Scenarios/Model1_10_ParamTest" />
+    <testcase name="ConvergenceCheck/2" value_param="32-byte object &lt;00-00 00-00 00-00 00-40 00-00 00-00 00-00 E0-3F 9A-99 99-99 99-99 B9-3F 00-00 00-00 00-00 F8-3F&gt;" status="run" time="0" classname="Model1_10_Scenarios/Model1_10_ParamTest" />
+  </testsuite>
+</testsuites>

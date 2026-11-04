@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Executable>D:\git\OTIS-2026\trunk\ii002921\task_02\src\Project1\x64\Debug\Project1.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="StabilityModuleTest.StablePolynomial" Duration="1" />
+    <TestDuration Test="StabilityModuleTest.UnstablePolynomial" Duration="1" />
+    <TestDuration Test="InputSignalsTest.StepSignal" Duration="1" />
+    <TestDuration Test="InputSignalsTest.ImpulseSignal" Duration="1" />
+    <TestDuration Test="InputSignalsTest.HarmonicSignal" Duration="1" />
+    <TestDuration Test="Model1_10_Scenarios/Model1_10_ParamTest.ConvergenceCheck/0" Duration="1" />
+    <TestDuration Test="Model1_10_Scenarios/Model1_10_ParamTest.ConvergenceCheck/1" Duration="1" />
+    <TestDuration Test="Model1_10_Scenarios/Model1_10_ParamTest.ConvergenceCheck/2" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>
