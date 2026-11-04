@@ -2,6 +2,7 @@
 #include <cmath>
 #include <algorithm>
 #include <complex>
+#include <vector>
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
@@ -15,6 +16,7 @@ bool checkDiscreteStability(const std::vector<double>& coeffs) {
     std::vector<double> p(coeffs.size());
     double lead = coeffs.back();
     if (std::abs(lead) < 1e-14) return false;
+
     for (size_t i = 0; i < coeffs.size(); ++i) {
         p[i] = coeffs[i] / lead;
     }
@@ -37,28 +39,4 @@ bool checkDiscreteStability(const std::vector<double>& coeffs) {
                 num = num * roots[i] + p[j];
             }
 
-            std::complex<double> den = 1.0;
-            for (int j = 0; j < n; ++j) {
-                if (i != j) {
-                    den *= (roots[i] - roots[j]);
-                }
-            }
-
-            if (std::abs(den) < 1e-14) continue;
-            std::complex<double> delta = num / den;
-            roots[i] -= delta;
-            max_delta = std::max(max_delta, std::abs(delta));
-        }
-        if (max_delta < 1e-10) break;
-    }
-
-    // ѕроверка услови€: модуль каждого корн€ должен быть строго меньше 1.0
-    const double EPS = 1e-6;
-    for (int i = 0; i < n; ++i) {
-        if (std::abs(roots[i]) >= (1.0 - EPS)) {
-            return false; // Ќашелс€ корень вне единичной окружности -> неустойчиво
-        }
-    }
-
-    return true;
-}
+            std::
