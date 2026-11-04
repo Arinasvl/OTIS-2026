@@ -4,7 +4,7 @@
 <p align="center">Кафедра ИИТ</p>
 <br><br><br><br><br><br><br>
 <p align="center"><strong>Лабораторная работа №1</strong></p>
-<p align="center">"По дисциплине: “Общая теория интеллектуальных систем”</p>
+<p align="center">По дисциплине: “Общая теория интеллектуальных систем”</p>
 <p align="center"><strong>Тема:</strong> “Моделирования динамических систем”</p>
 <br><br><br><br><br>
 
