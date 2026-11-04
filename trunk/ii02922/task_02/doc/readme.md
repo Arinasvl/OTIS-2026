@@ -8,11 +8,12 @@
 <p align="center"><strong>Тема:</strong> «Модульные тесты и анализ устойчивости дискретных моделей»</p>
 <br><br><br><br><br>
 
-<div style="margin-left: auto; margin-right: -50px; width: fit-content; text-align: right;">
+<div style="text-align: right; margin-right: 50px;">
 Выполнила:<br>
 Студентка 2 курса<br>
 Группы ИИ-29<br>
 Савило А. А.<br>
+<br>
 Проверил:<br>
 Дворанинович Д. А.
 </div>
