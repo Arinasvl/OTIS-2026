@@ -81,7 +81,7 @@
 
 **System with State Delay:**
 
-$$ y_{\tau+1} =a_1y_{\tau} + a_2y_{\tau-k} + bu_{\tau}$$
+$$y_{\tau+1} =a_1y_{\tau} + a_2y_{\tau-k} + bu_{\tau}$$
 
 где:
 
@@ -120,18 +120,11 @@ $$
 
 **Bounded Saturation Rate:**
 
-$$
-\frac{dy}{dt}=b\tanh(u)
-$$
+$\dfrac{dy}{dt} = b\tanh(u)$
 
 Для численного решения используется явная схема Эйлера:
 
-$$
-y_{\tau+1}
-=
-y_\tau+
-\Delta t\cdot b\tanh(u_\tau)
-$$
+$y_{\tau+1} = y_\tau + \Delta t \cdot b\tanh(u_\tau)$
 
 где $\Delta t$ — шаг интегрирования.
 
@@ -287,16 +280,13 @@ $$
 Уравнение модели:
 
 $$
-y_{\tau+1}
-=
-ay_\tau+
-b\cdot relay(u_\tau,y_\tau)
+y_{\tau+1} = ay_\tau + b \cdot relay(u_\tau, y_\tau)
 $$
 
 Релейный элемент принимает только два значения:
 
 $$
-relay(u,y)\in\{-1,1\}
+relay(u, y) \in \{-1, 1\}
 $$
 
 Для него используется зона гистерезиса $\varepsilon$.
@@ -358,18 +348,12 @@ double relay(double u, double y);
 
 Дифференциальное уравнение модели:
 
-$$
-\frac{dy}{dt}=b\tanh(u)
-$$
+$\dfrac{dy}{dt} = b\tanh(u)$
 
 Для решения используется явный метод Эйлера:
 
-$$![alt text](image.png)
-y_{\tau+1}
-=
-y_\tau+
-\Delta t\cdot b\tanh(u_\tau)
-$$
+$y_{\tau+1} = y_\tau + \Delta t \cdot b\tanh(u_\tau)$
+
 
 где:
 
@@ -499,9 +483,12 @@ build.bat
 В соответствии с заданием необходимо выполнить рецензирование запросов на внесение изменений других студентов.
 
 Task 01 Вариант 17 - Пекун Софья (ii02919) - #17
+
 ![](rec1.png)
 
+
 task_01 Пархоц ЛР1
+
 ![](rec2.png)
 
 ---
