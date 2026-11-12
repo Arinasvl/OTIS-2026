@@ -3,11 +3,10 @@
 #include <cmath>
 #include <string>
 #include <clocale>
-#include <memory>
 #include <cstdlib>
+#include <memory>
 
 using namespace std;
-
 
 // ============================================================
 // БАЗОВЫЙ АБСТРАКТНЫЙ КЛАСС MODEL
@@ -22,10 +21,8 @@ public:
     virtual ~Model() = default;
 };
 
-
 // ============================================================
 // МОДЕЛЬ 1.10
-// y(t+1) = a1*y(t) + b1*u(t) + b2*u(t-2)
 // ============================================================
 
 class Model1_10 : public Model
@@ -34,13 +31,10 @@ private:
     double m_a1;
     double m_b1;
     double m_b2;
-    
-    // ИСПРАВЛЕНИЕ 1: Инициализация внутри класса (in-class initializer)
     double m_u_t_minus_1 = 0.0;
     double m_u_t_minus_2 = 0.0;
 
 public:
-    // ИСПРАВЛЕНИЕ 1: Убрали m_u_t_minus_1 и m_u_t_minus_2 из списка инициализации
     Model1_10(double a1, double b1, double b2)
         : m_a1(a1), m_b1(b1), m_b2(b2)
     {
@@ -50,10 +44,8 @@ public:
     {
         (void)dt;
         double nextY = m_a1 * y + m_b1 * u + m_b2 * m_u_t_minus_2;
-
         m_u_t_minus_2 = m_u_t_minus_1;
         m_u_t_minus_1 = u;
-
         return nextY;
     }
 
@@ -69,10 +61,8 @@ public:
     }
 };
 
-
 // ============================================================
 // МОДЕЛЬ 2.4
-// y(t+1) = a*y(t)*cos(y(t)) + b*ln(1+|u(t)|)
 // ============================================================
 
 class Model2_4 : public Model
@@ -97,15 +87,13 @@ public:
 
     void reset() override
     {
-        // Модель 2.4 не имеет накапливаемого внутреннего состояния, 
+        // Модель 2.4 не имеет накапливаемого внутреннего состояния,
         // зависящего от предыдущих шагов, поэтому сброс не требуется.
     }
 };
 
-
 // ============================================================
 // МОДЕЛЬ 3.8
-// dy/dt = -a1*y - a2*y^2 + b*u (метод Эйлера)
 // ============================================================
 
 class Model3_8 : public Model
@@ -136,24 +124,17 @@ public:
     }
 };
 
-
 // ============================================================
-// ФУНКЦИЯ ФОРМИРОВАНИЯ ВХОДНОГО СИГНАЛА
+// ФУНКЦИЯ ВВОДА
 // ============================================================
 
 double getInput(int type, int t)
 {
     if (type == 1) return 1.0;
-    
-    if (type == 2) {
-        return (t == 0) ? 1.0 : 0.0;
-    }
-    
+    if (type == 2) return (t == 0) ? 1.0 : 0.0;
     if (type == 3) return sin(t);
-
     return 0.0;
 }
-
 
 // ============================================================
 // ФУНКЦИЯ МОДЕЛИРОВАНИЯ
@@ -193,14 +174,13 @@ void simulate(Model& model, int inputType, int n, double y0, double dt, const st
     cout << "\nРезультаты сохранены в файл: " << fileName << "\n";
 }
 
-
 // ============================================================
 // ГЛАВНАЯ ФУНКЦИЯ
 // ============================================================
 
 int main()
 {
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "Russian");
 
     cout << "==============================================\n";
     cout << "       ПРОГРАММА МОДЕЛИРОВАНИЯ\n";
@@ -226,57 +206,54 @@ int main()
         return 1;
     }
 
-    // ИСПРАВЛЕНИЕ 2: Каждая переменная объявлена в отдельном операторе
     double y0;
     cout << "\nВведите начальное значение y: ";
     cin >> y0;
-    
+
     double dt;
     cout << "Введите шаг времени dt: ";
     cin >> dt;
-    
+
     if (dt <= 0) {
         cout << "dt должен быть больше 0.\n";
         return 1;
     }
 
-    unique_ptr<Model> model = nullptr;
+    // ОБЪЯВЛЯЕМ ПЕРЕМЕННЫЕ ДО if-else, чтобы они были видны снаружи
+    unique_ptr<Model> model;
     string fileName;
 
     if (modelChoice == 1) {
-        // ИСПРАВЛЕНИЕ 2: Раздельное объявление
         double a1;
         double b1;
         double b2;
-        
+
         cout << "\nВведите коэффициенты Model 1.10:\na1 = "; cin >> a1;
         cout << "b1 = "; cin >> b1;
         cout << "b2 = "; cin >> b2;
-        
+
         model = make_unique<Model1_10>(a1, b1, b2);
         fileName = "model1_10.csv";
     }
     else if (modelChoice == 2) {
-        // ИСПРАВЛЕНИЕ 2: Раздельное объявление
         double a;
         double b;
-        
+
         cout << "\nВведите коэффициенты Model 2.4:\na = "; cin >> a;
         cout << "b = "; cin >> b;
-        
+
         model = make_unique<Model2_4>(a, b);
         fileName = "model2_4.csv";
     }
     else if (modelChoice == 3) {
-        // ИСПРАВЛЕНИЕ 2: Раздельное объявление
         double a1;
         double a2;
         double b;
-        
+
         cout << "\nВведите коэффициенты Model 3.8:\na1 = "; cin >> a1;
         cout << "a2 = "; cin >> a2;
         cout << "b = "; cin >> b;
-        
+
         model = make_unique<Model3_8>(a1, a2, b);
         fileName = "model3_8.csv";
     }
@@ -285,6 +262,7 @@ int main()
         return 1;
     }
 
+    // ТЕПЕРЬ model и fileName видны здесь
     if (model) {
         simulate(*model, inputChoice, n, y0, dt, fileName);
         system("python plot.py");
