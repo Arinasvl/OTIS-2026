@@ -99,7 +99,7 @@ int main()
     if (modelChoice == 1) {
         double a1;
         double b1;
-        double b2s;
+        double b2;
         cout << "\n¬ведите коэффициенты Model 1.10:\na1 = "; cin >> a1;
         cout << "b1 = "; cin >> b1;
         cout << "b2 = "; cin >> b2;
