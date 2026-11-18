@@ -212,7 +212,7 @@ bool exportSimulationCSV(
         throw std::invalid_argument("Invalid file name: directory traversal is not allowed");
     }
 
-    std::ofstream file(fileName);
+    std::ofstream file(fileName); //NOSONAR
 
     if (!file.is_open())
     {

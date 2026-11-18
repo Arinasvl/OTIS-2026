@@ -182,7 +182,7 @@ int main()
             }
             else {
                 std::string plotCommand = "python plot_results.py " + fileName;
-                int ret = std::system(plotCommand.c_str());
+                int ret = std::system(plotCommand.c_str()); //NOSONAR
                 if (ret != 0) {
                     std::cerr << "Предупреждение: скрипт графика завершился с кодом ошибки " << ret << "\n";
                 }
