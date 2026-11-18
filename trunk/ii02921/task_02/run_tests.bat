@@ -1,4 +1,3 @@
-
 @echo off
 chcp 65001 >nul
 setlocal
@@ -18,7 +17,7 @@ if not exist build (
 echo.
 echo [1/4] Конфигурация проекта (CMake)...
 
-cmake -S . -B build
+cmake -S . -B build -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 if errorlevel 1 (
     echo.
