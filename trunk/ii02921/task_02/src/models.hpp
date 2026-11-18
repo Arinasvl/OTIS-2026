@@ -12,9 +12,8 @@ public:
     virtual double calculateNext(double y, double u, double dt) = 0;
     virtual std::string getName() const = 0;
     virtual void reset() = 0;
-    virtual ~Model() {
-        // default destructor
-    }
+    Model() = default;
+    virtual ~Model() = default;
 };
 
 // ============================================================
@@ -83,7 +82,9 @@ public:
         return "Model 2.4 - Logarithmic Multi-Variable Interaction";
     }
 
-    void reset() override {}
+    void reset() override {
+        // Intentional empty implementation
+    }
 };
 
 // ============================================================
@@ -111,7 +112,9 @@ public:
         return "Model 3.8 - Combined Linear-Quadratic Decay";
     }
 
-    void reset() override {}
+    void reset() override {
+        // Intentional empty implementation
+    }
 };
 
 // ============================================================

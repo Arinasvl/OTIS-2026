@@ -108,7 +108,7 @@ int main()
         fileName = "model1_10.csv";
 
         // Проверка устойчивости для Модели 1.10 (полином z - a1 = 0)
-        vector<double> poly = { -a1, 1.0 };
+        std::vector poly = { -a1, 1.0 };
         if (checkDiscreteStability(poly)) {
             cout << "[АНАЛИЗ УСТОЙЧИВОСТИ]: Модель 1.10 УСТОЙЧИВА.\n";
         }
@@ -126,7 +126,7 @@ int main()
         fileName = "model2_4.csv";
 
         // Проверка устойчивости для Модели 2.4 (линеаризованный полином z - a = 0)
-        vector<double> poly = { -a, 1.0 };
+        std::vector poly = { -a, 1.0 };
         if (checkDiscreteStability(poly)) {
             cout << "[АНАЛИЗ УСТОЙЧИВОСТИ]: Модель 2.4 УСТОЙЧИВА.\n";
         }
@@ -147,7 +147,7 @@ int main()
 
         // Проверка устойчивости для Модели 3.8 (линеаризованный полином z - (1 - dt * a1) = 0)
         double pole = 1.0 - dt * a1;
-        vector<double> poly = { -pole, 1.0 };
+        std::vector poly = { -pole, 1.0 };
         if (checkDiscreteStability(poly)) {
             cout << "[АНАЛИЗ УСТОЙЧИВОСТИ]: Модель 3.8 УСТОЙЧИВА.\n";
         }
