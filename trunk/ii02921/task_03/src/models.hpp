@@ -1,6 +1,6 @@
 
 #pragma once
-
+#include <string>
 #include <cmath>
 #include <string>
 
@@ -32,7 +32,7 @@ public:
      *
      * @return Строка с названием модели.
      */
-    virtual string getName() const = 0;
+    virtual std::string getName() const = 0;
 
     /**
      * @brief Сбрасывает внутреннее состояние модели.
@@ -115,7 +115,7 @@ public:
      *
      * @return Название Model 1.10.
      */
-    string getName() const override
+    std::string getName() const override
     {
         return "Model 1.10 - Distributed Control Window Model";
     }
@@ -183,7 +183,7 @@ public:
      *
      * @return Название Model 2.4.
      */
-    string getName() const override
+    std::string getName() const override
     {
         return "Model 2.4 - Logarithmic Multi-Variable Interaction";
     }
@@ -255,7 +255,7 @@ public:
      *
      * @return Название Model 3.8.
      */
-    string getName() const override
+    std::string getName() const override
     {
         return "Model 3.8 - Combined Linear-Quadratic Decay";
     }

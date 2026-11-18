@@ -171,25 +171,20 @@ int main()
 
             // Формируем команду для запуска Python-скрипта
             // Оборачиваем имя файла в кавычки на случай, если в нём есть пробелы
-            string plotCommand = "python plot_results.py \"" + fileName + "\"";
+                // Запуск скрипта построения графика
+            std::string plotCommand = "python plot_results.py " + csvFileName;
 
-            cout << "[INFO] Generating plot automatically...\n";
-
-            // Запускаем команду через системную оболочку
+            // Проверка на инъекцию команд (требование SonarQube)
             if (plotCommand.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.- ") != std::string::npos) {
                 std::cerr << "Ошибка: недопустимые символы в команде запуска графика.\n";
             }
             else {
-                system(plotCommand.c_str());
+                // Правильное объявление переменной ret
+                int ret = std::system(plotCommand.c_str());
+                if (ret != 0) {
+                    std::cerr << "Предупреждение: скрипт графика завершился с кодом ошибки " << ret << "\n";
+                }
             }
-
-            if (ret != 0)
-            {
-                cout << "[WARNING] Failed to run Python plot script.\n";
-                cout << "Make sure Python is installed and added to PATH, and 'matplotlib' is installed.\n";
-                cout << "You can still plot it manually later by running: " << plotCommand << "\n";
-            }
-        }
         else
         {
             cout << "[ERROR] Could not create CSV file.\n";
