@@ -97,7 +97,9 @@ int main()
     string fileName;
 
     if (modelChoice == 1) {
-        double a1, b1, b2;
+        double a1;
+        double b1;
+        double b2s;
         cout << "\n¬ведите коэффициенты Model 1.10:\na1 = "; cin >> a1;
         cout << "b1 = "; cin >> b1;
         cout << "b2 = "; cin >> b2;
@@ -115,7 +117,8 @@ int main()
         }
     }
     else if (modelChoice == 2) {
-        double a, b;
+        double a;
+        double b;
         cout << "\n¬ведите коэффициенты Model 2.4:\na = "; cin >> a;
         cout << "b = "; cin >> b;
 
@@ -132,7 +135,9 @@ int main()
         }
     }
     else if (modelChoice == 3) {
-        double a1, a2, b;
+        double a1;
+        double a2;
+        double b;
         cout << "\n¬ведите коэффициенты Model 3.8:\na1 = "; cin >> a1;
         cout << "a2 = "; cin >> a2;
         cout << "b = "; cin >> b;

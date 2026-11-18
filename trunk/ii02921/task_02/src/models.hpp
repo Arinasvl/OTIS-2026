@@ -12,7 +12,9 @@ public:
     virtual double calculateNext(double y, double u, double dt) = 0;
     virtual std::string getName() const = 0;
     virtual void reset() = 0;
-    virtual ~Model() = default;
+    virtual ~Model() {
+        // default destructor
+    }
 };
 
 // ============================================================
