@@ -159,44 +159,11 @@ int main()
         // 5. Вывод результатов
         printSimulationResults(result);
 
-        // 6. Сохранение в CSV
-                // 6. Сохранение в CSV и автоматический запуск графиков
+        // 6. Сохранение в CSV и автоматический запуск графиков
         cout << "\nEnter CSV file name (e.g., result.csv): ";
         string fileName;
         cin >> fileName;
 
         if (exportSimulationCSV(result, fileName))
         {
-            cout << "[OK] Results successfully saved to " << fileName << "\n";
-
-            // Формируем команду для запуска Python-скрипта
-            // Оборачиваем имя файла в кавычки на случай, если в нём есть пробелы
-                // Запуск скрипта построения графика
-            std::string plotCommand = "python plot_results.py " + csvFileName;
-
-            // Проверка на инъекцию команд (требование SonarQube)
-            if (plotCommand.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.- ") != std::string::npos) {
-                std::cerr << "Ошибка: недопустимые символы в команде запуска графика.\n";
-            }
-            else {
-                // Правильное объявление переменной ret
-                int ret = std::system(plotCommand.c_str());
-                if (ret != 0) {
-                    std::cerr << "Предупреждение: скрипт графика завершился с кодом ошибки " << ret << "\n";
-                }
-            }
-        else
-        {
-            cout << "[ERROR] Could not create CSV file.\n";
-        }
-
-        cout << "\nSimulation completed successfully.\n";
-    }
-    catch (const exception& e)
-    {
-        cerr << "\nPROGRAM ERROR: " << e.what() << "\n";
-        return 1;
-    }
-
-    return 0;
-}
+            cout << "[
