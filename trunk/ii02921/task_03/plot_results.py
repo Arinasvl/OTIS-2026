@@ -38,7 +38,8 @@ def read_csv(filename):
 
 def build_graph(filename):
     """Построение графика переходного процесса (как в примере)."""
-    time, setpoint, output, error, control = read_csv(filename)
+    # ИСПРАВЛЕНИЕ: заменяем неиспользуемую переменную 'error' на '_'
+    time, setpoint, output, _, control = read_csv(filename)
 
     # Создаём ОДИН график с тремя линиями
     fig, ax1 = plt.subplots(figsize=(12, 8))

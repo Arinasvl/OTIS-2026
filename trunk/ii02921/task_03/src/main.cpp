@@ -176,7 +176,12 @@ int main()
             cout << "[INFO] Generating plot automatically...\n";
 
             // Запускаем команду через системную оболочку
-            int ret = std::system(plotCommand.c_str());
+            if (plotCommand.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.- ") != std::string::npos) {
+                std::cerr << "Ошибка: недопустимые символы в команде запуска графика.\n";
+            }
+            else {
+                system(plotCommand.c_str());
+            }
 
             if (ret != 0)
             {

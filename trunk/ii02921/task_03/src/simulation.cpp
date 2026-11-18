@@ -1,13 +1,12 @@
-
 #include "simulation.hpp"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <cmath>
 #include <stdexcept>
+#include <string>
 
-using namespace std;
-
+// using namespace std; // Удалено для соответствия стандартам SonarQube
 
 /**
  * @brief Проверяет корректность параметров моделирования.
@@ -16,49 +15,33 @@ static void validateConfig(const SimulationConfig& config)
 {
     if (config.dt <= 0.0)
     {
-        throw invalid_argument(
-            "Time step must be greater than zero"
-        );
+        throw std::invalid_argument("Time step must be greater than zero");
     }
 
-    if (!isfinite(config.dt) ||
-        !isfinite(config.setpoint) ||
-        !isfinite(config.initialY) ||
-        !isfinite(config.epsilon))
+    if (!std::isfinite(config.dt) ||
+        !std::isfinite(config.setpoint) ||
+        !std::isfinite(config.initialY) ||
+        !std::isfinite(config.epsilon))
     {
-        throw invalid_argument(
-            "Simulation parameters must be finite"
-        );
+        throw std::invalid_argument("Simulation parameters must be finite");
     }
 
-    if (config.mode == SimulationMode::FixedSteps)
+    // ИСПРАВЛЕНИЕ 1: Объединение вложенных if (Merge this "if" statement)
+    if (config.mode == SimulationMode::FixedSteps && config.steps <= 0)
     {
-        if (config.steps <= 0)
-        {
-            throw invalid_argument(
-                "Number of steps must be greater than zero"
-            );
-        }
+        throw std::invalid_argument("Number of steps must be greater than zero");
     }
 
-    if (config.mode == SimulationMode::UntilSettled)
+    if (config.mode == SimulationMode::UntilSettled && config.epsilon <= 0.0)
     {
-        if (config.epsilon <= 0.0)
-        {
-            throw invalid_argument(
-                "Epsilon must be greater than zero"
-            );
-        }
+        throw std::invalid_argument("Epsilon must be greater than zero");
+    }
 
-        if (config.maxSteps <= 0)
-        {
-            throw invalid_argument(
-                "Maximum number of steps must be greater than zero"
-            );
-        }
+    if (config.mode == SimulationMode::UntilSettled && config.maxSteps <= 0)
+    {
+        throw std::invalid_argument("Maximum number of steps must be greater than zero");
     }
 }
-
 
 /**
  * @brief Выполняет моделирование системы управления.
@@ -94,7 +77,7 @@ SimulationResult runSimulation(
 
     // Проверяем, достигнута ли точность уже в начальный момент.
     if (config.mode == SimulationMode::UntilSettled &&
-        fabs(initialError) <= config.epsilon)
+        std::fabs(initialError) <= config.epsilon)
     {
         result.settled = true;
         return result;
@@ -119,11 +102,10 @@ SimulationResult runSimulation(
         // Вычисление нового состояния объекта.
         double nextY = model.calculateNext(y, u, config.dt);
 
-        if (!isfinite(nextY))
+        if (!std::isfinite(nextY))
         {
-            throw runtime_error(
-                "The mathematical model returned a non-finite value"
-            );
+            // ИСПРАВЛЕНИЕ 2: Использование специализированного исключения для математических ошибок
+            throw std::domain_error("The mathematical model returned a non-finite value");
         }
 
         // Переход к следующему состоянию.
@@ -148,7 +130,7 @@ SimulationResult runSimulation(
 
         // Проверка достижения установившегося режима.
         if (config.mode == SimulationMode::UntilSettled &&
-            fabs(nextError) <= config.epsilon)
+            std::fabs(nextError) <= config.epsilon)
         {
             result.settled = true;
             break;
@@ -158,72 +140,78 @@ SimulationResult runSimulation(
     return result;
 }
 
-
 /**
  * @brief Выводит таблицу результатов в консоль.
  */
 void printSimulationResults(const SimulationResult& result)
 {
-    cout << fixed << setprecision(4);
+    std::cout << std::fixed << std::setprecision(4);
 
-    cout << "\n";
-    cout << "============================================================\n";
-    cout << "                 SIMULATION RESULTS\n";
-    cout << "============================================================\n";
+    std::cout << "\n";
+    std::cout << "============================================================\n";
+    std::cout << "                 SIMULATION RESULTS\n";
+    std::cout << "============================================================\n";
 
-    cout << left
-        << setw(8) << "Step"
-        << setw(12) << "Time"
-        << setw(14) << "Setpoint"
-        << setw(14) << "Output"
-        << setw(14) << "Error"
-        << setw(14) << "Control"
+    std::cout << std::left
+        << std::setw(8) << "Step"
+        << std::setw(12) << "Time"
+        << std::setw(14) << "Setpoint"
+        << std::setw(14) << "Output"
+        << std::setw(14) << "Error"
+        << std::setw(14) << "Control"
         << "\n";
 
-    cout << "------------------------------------------------------------\n";
+    std::cout << "------------------------------------------------------------\n";
 
     for (const SimulationRow& row : result.rows)
     {
-        cout << left
-            << setw(8) << row.step
-            << setw(12) << row.time
-            << setw(14) << row.setpoint
-            << setw(14) << row.y
-            << setw(14) << row.error
-            << setw(14) << row.u
+        std::cout << std::left
+            << std::setw(8) << row.step
+            << std::setw(12) << row.time
+            << std::setw(14) << row.setpoint
+            << std::setw(14) << row.y
+            << std::setw(14) << row.error
+            << std::setw(14) << row.u
             << "\n";
     }
 
-    cout << "------------------------------------------------------------\n";
+    std::cout << "------------------------------------------------------------\n";
 
-    cout << "Steps performed: " << result.stepsPerformed << "\n";
+    std::cout << "Steps performed: " << result.stepsPerformed << "\n";
 
     if (result.mode == SimulationMode::FixedSteps)
     {
-        cout << "Status: Fixed-step simulation completed\n";
+        std::cout << "Status: Fixed-step simulation completed\n";
     }
     else if (result.settled)
     {
-        cout << "Status: Settled regime reached\n";
+        std::cout << "Status: Settled regime reached\n";
     }
     else
     {
-        cout << "Status: Maximum number of steps reached\n";
+        std::cout << "Status: Maximum number of steps reached\n";
     }
 
-    cout << "============================================================\n";
+    std::cout << "============================================================\n";
 }
-
 
 /**
  * @brief Сохраняет результаты в CSV-файл.
  */
 bool exportSimulationCSV(
     const SimulationResult& result,
-    const string& fileName
+    const std::string& fileName
 )
 {
-    ofstream file(fileName);
+    // ИСПРАВЛЕНИЕ 3: Защита от инъекции пути (Path Injection / Directory Traversal)
+    if (fileName.find("..") != std::string::npos ||
+        fileName.find('/') != std::string::npos ||
+        fileName.find('\\') != std::string::npos)
+    {
+        throw std::invalid_argument("Invalid file name: directory traversal is not allowed");
+    }
+
+    std::ofstream file(fileName);
 
     if (!file.is_open())
     {
@@ -232,7 +220,7 @@ bool exportSimulationCSV(
 
     file << "Step,Time,Setpoint,Output,Error,Control\n";
 
-    file << fixed << setprecision(6);
+    file << std::fixed << std::setprecision(6);
 
     for (const SimulationRow& row : result.rows)
     {
