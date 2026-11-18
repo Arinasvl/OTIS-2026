@@ -166,4 +166,33 @@ int main()
 
         if (exportSimulationCSV(result, fileName))
         {
-            cout << "[
+            cout << "[OK] Results successfully saved to " << fileName << "\n";
+
+            std::string plotCommand = "python plot_results.py " + fileName;
+
+            if (plotCommand.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.- ") != std::string::npos) {
+                cerr << "Ошибка: недопустимые символы в команде запуска графика.\n";
+            }
+            else
+            {
+                int ret = system(plotCommand.c_str());
+                if (ret != 0) {
+                    cerr << "Предупреждение: скрипт графика завершился с кодом ошибки " << ret << "\n";
+                }
+            }
+        }
+        else
+        {
+            cout << "[ERROR] Could not create CSV file.\n";
+        }
+
+        cout << "\nSimulation completed successfully.\n";
+    }
+    catch (const exception& e)
+    {
+        cerr << "\nPROGRAM ERROR: " << e.what() << "\n";
+        return 1;
+    }
+
+    return 0;
+}
