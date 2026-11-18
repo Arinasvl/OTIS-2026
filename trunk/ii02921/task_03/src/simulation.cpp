@@ -6,8 +6,6 @@
 #include <stdexcept>
 #include <string>
 
-// using namespace std; // Удалено для соответствия стандартам SonarQube
-
 /**
  * @brief Проверяет корректность параметров моделирования.
  */
@@ -198,12 +196,15 @@ void printSimulationResults(const SimulationResult& result)
 /**
  * @brief Сохраняет результаты в CSV-файл.
  */
+ /**
+  * @brief Сохраняет результаты в CSV-файл.
+  */
 bool exportSimulationCSV(
     const SimulationResult& result,
     const std::string& fileName
 )
 {
-    // ИСПРАВЛЕНИЕ 3: Защита от инъекции пути (Path Injection / Directory Traversal)
+    // ЗАЩИТА ОТ PATH INJECTION: запрещаем символы перехода по директориям
     if (fileName.find("..") != std::string::npos ||
         fileName.find('/') != std::string::npos ||
         fileName.find('\\') != std::string::npos)
@@ -219,7 +220,6 @@ bool exportSimulationCSV(
     }
 
     file << "Step,Time,Setpoint,Output,Error,Control\n";
-
     file << std::fixed << std::setprecision(6);
 
     for (const SimulationRow& row : result.rows)
@@ -233,6 +233,5 @@ bool exportSimulationCSV(
     }
 
     file.close();
-
     return true;
 }

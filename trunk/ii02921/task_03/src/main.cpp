@@ -166,24 +166,31 @@ int main()
 
         if (exportSimulationCSV(result, fileName))
         {
-            cout << "[OK] Results successfully saved to " << fileName << "\n";
+            std::cout << "[OK] Results successfully saved to " << fileName << "\n";
 
-            std::string plotCommand = "python plot_results.py " + fileName;
-
-            if (plotCommand.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.- ") != std::string::npos) {
-                cerr << "Ошибка: недопустимые символы в команде запуска графика.\n";
+            // Строгая валидация имени файла для защиты от Command Injection
+            bool isValidFileName = true;
+            for (char c : fileName) {
+                if (!std::isalnum(static_cast<unsigned char>(c)) && c != '.' && c != '_' && c != '-') {
+                    isValidFileName = false;
+                    break;
+                }
             }
-            else
-            {
-                int ret = system(plotCommand.c_str());
+
+            if (!isValidFileName) {
+                std::cerr << "Ошибка: имя файла содержит недопустимые символы.\n";
+            }
+            else {
+                std::string plotCommand = "python plot_results.py " + fileName;
+                int ret = std::system(plotCommand.c_str());
                 if (ret != 0) {
-                    cerr << "Предупреждение: скрипт графика завершился с кодом ошибки " << ret << "\n";
+                    std::cerr << "Предупреждение: скрипт графика завершился с кодом ошибки " << ret << "\n";
                 }
             }
         }
         else
         {
-            cout << "[ERROR] Could not create CSV file.\n";
+            std::cout << "[ERROR] Could not create CSV file.\n";
         }
 
         cout << "\nSimulation completed successfully.\n";
