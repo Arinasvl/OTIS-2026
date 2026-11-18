@@ -5,7 +5,7 @@ add_executable(task_02_tests
 
 # Подключаем библиотеку моделей и Google Test
 target_link_libraries(task_02_tests PRIVATE
-    models_lib
+    models_lib_ii02921
     GTest::gtest
     GTest::gtest_main
 )
