@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Task 03 - PID Controller: Файл src/simulation.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Task 03 - PID Controller<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Система автоматического управления на основе ПИД-регулятора</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('simulation_8hpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл simulation.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="models_8hpp_source.html">models.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a>&quot;</code><br />
+</div>
+<p><a href="simulation_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:SimulationConfig" id="r_SimulationConfig"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_simulation_config.html">SimulationConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры одного эксперимента.  <a href="struct_simulation_config.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:SimulationRow" id="r_SimulationRow"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_simulation_row.html">SimulationRow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Результаты одного временного шага.  <a href="struct_simulation_row.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:SimulationResult" id="r_SimulationResult"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_simulation_result.html">SimulationResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Полный результат моделирования.  <a href="struct_simulation_result.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a2c385f642822975febcc3c48fb9605bd" id="r_a2c385f642822975febcc3c48fb9605bd"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a2c385f642822975febcc3c48fb9605bd">SimulationMode</a> { <a class="el" href="#a2c385f642822975febcc3c48fb9605bda14dea9c73b8771143699cd59f2f7b4bc">FixedSteps</a>
+, <a class="el" href="#a2c385f642822975febcc3c48fb9605bdaf72c8d82921b238fdc90036aa9b4bf4d">UntilSettled</a>
+ }</td></tr>
+<tr class="memdesc:a2c385f642822975febcc3c48fb9605bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Режим проведения моделирования.  <a href="#a2c385f642822975febcc3c48fb9605bd">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:af1f97dad7b2d20e090d97b050b6d4d2d" id="r_af1f97dad7b2d20e090d97b050b6d4d2d"><td class="memItemLeft"><a class="el" href="struct_simulation_result.html">SimulationResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#af1f97dad7b2d20e090d97b050b6d4d2d">runSimulation</a> (<a class="el" href="class_model.html">Model</a> &amp;model, <a class="el" href="class_p_i_d_controller.html">PIDController</a> &amp;pid, const <a class="el" href="struct_simulation_config.html">SimulationConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:af1f97dad7b2d20e090d97b050b6d4d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет моделирование замкнутой системы управления.  <br /></td></tr>
+<tr class="memitem:a58ae0ef43cf8bb5282a0cc3e24449f48" id="r_a58ae0ef43cf8bb5282a0cc3e24449f48"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a58ae0ef43cf8bb5282a0cc3e24449f48">printSimulationResults</a> (const <a class="el" href="struct_simulation_result.html">SimulationResult</a> &amp;result)</td></tr>
+<tr class="memdesc:a58ae0ef43cf8bb5282a0cc3e24449f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит результаты моделирования в консоль.  <br /></td></tr>
+<tr class="memitem:a6bf59dfceeac41a4ae24fb4a595aee9b" id="r_a6bf59dfceeac41a4ae24fb4a595aee9b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6bf59dfceeac41a4ae24fb4a595aee9b">exportSimulationCSV</a> (const <a class="el" href="struct_simulation_result.html">SimulationResult</a> &amp;result, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a6bf59dfceeac41a4ae24fb4a595aee9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует результаты в CSV-файл.  <br /></td></tr>
+</table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Перечисления</h2>
+<a id="a2c385f642822975febcc3c48fb9605bd" name="a2c385f642822975febcc3c48fb9605bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c385f642822975febcc3c48fb9605bd">&#9670;&#160;</a></span>SimulationMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a2c385f642822975febcc3c48fb9605bd">SimulationMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Режим проведения моделирования. </p>
+<p>FixedSteps - моделирование в течение заданного числа шагов. UntilSettled - моделирование до достижения заданной точности. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a2c385f642822975febcc3c48fb9605bda14dea9c73b8771143699cd59f2f7b4bc" name="a2c385f642822975febcc3c48fb9605bda14dea9c73b8771143699cd59f2f7b4bc"></a>FixedSteps&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c385f642822975febcc3c48fb9605bdaf72c8d82921b238fdc90036aa9b4bf4d" name="a2c385f642822975febcc3c48fb9605bdaf72c8d82921b238fdc90036aa9b4bf4d"></a>UntilSettled&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="simulation_8hpp_source.html">simulation.hpp</a> строка <a class="el" href="simulation_8hpp_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="a6bf59dfceeac41a4ae24fb4a595aee9b" name="a6bf59dfceeac41a4ae24fb4a595aee9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf59dfceeac41a4ae24fb4a595aee9b">&#9670;&#160;</a></span>exportSimulationCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool exportSimulationCSV </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_simulation_result.html">SimulationResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Экспортирует результаты в CSV-файл. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>Результаты эксперимента. </td></tr>
+    <tr><td class="paramname">fileName</td><td>Имя выходного файла. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если файл успешно записан. </dd></dl>
+
+</div>
+</div>
+<a id="a58ae0ef43cf8bb5282a0cc3e24449f48" name="a58ae0ef43cf8bb5282a0cc3e24449f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ae0ef43cf8bb5282a0cc3e24449f48">&#9670;&#160;</a></span>printSimulationResults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printSimulationResults </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_simulation_result.html">SimulationResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит результаты моделирования в консоль. </p>
+<p>Выводит таблицу результатов в консоль.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>Результаты эксперимента.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Выводит результаты моделирования в консоль. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a> строка <a class="el" href="simulation_8cpp_source.html#l00165">165</a></p>
+
+</div>
+</div>
+<a id="af1f97dad7b2d20e090d97b050b6d4d2d" name="af1f97dad7b2d20e090d97b050b6d4d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f97dad7b2d20e090d97b050b6d4d2d">&#9670;&#160;</a></span>runSimulation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_simulation_result.html">SimulationResult</a> runSimulation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model.html">Model</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_p_i_d_controller.html">PIDController</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_simulation_config.html">SimulationConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет моделирование замкнутой системы управления. </p>
+<p>Выполняет моделирование системы управления.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">model</td><td>Математическая модель объекта управления. </td></tr>
+    <tr><td class="paramname">pid</td><td>PID-регулятор. </td></tr>
+    <tr><td class="paramname">config</td><td>Параметры эксперимента. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результаты моделирования.</dd></dl>
+<p>Выполняет моделирование замкнутой системы управления. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a> строка <a class="el" href="simulation_8cpp_source.html#l00066">66</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="simulation_8hpp.html">simulation.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

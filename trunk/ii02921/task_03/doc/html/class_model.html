@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Task 03 - PID Controller: Класс Model</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Task 03 - PID Controller<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Система автоматического управления на основе ПИД-регулятора</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_model.html','','class_model-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс Model<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Абстрактный базовый класс математической модели.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="laba3_2models_8hpp_source.html">models.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Model:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_model.png" usemap="#Model_map" alt=""/>
+  <map id="Model_map" name="Model_map">
+<area href="class_model1__10.html" title="Математическая модель 1.10." alt="Model1_10" shape="rect" coords="0,56,75,80"/>
+<area href="class_model1__10.html" title="Математическая модель 1.10." alt="Model1_10" shape="rect" coords="85,56,160,80"/>
+<area href="class_model2__4.html" title="Математическая модель 2.4." alt="Model2_4" shape="rect" coords="170,56,245,80"/>
+<area href="class_model2__4.html" title="Математическая модель 2.4." alt="Model2_4" shape="rect" coords="255,56,330,80"/>
+<area href="class_model3__8.html" title="Математическая модель 3.8." alt="Model3_8" shape="rect" coords="340,56,415,80"/>
+<area href="class_model3__8.html" title="Математическая модель 3.8." alt="Model3_8" shape="rect" coords="425,56,500,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a8fe23512f258047970c8bed167d9a26d" id="r_a8fe23512f258047970c8bed167d9a26d"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a8fe23512f258047970c8bed167d9a26d">calculateNext</a> (double y, double u, double dt)=0</td></tr>
+<tr class="memdesc:a8fe23512f258047970c8bed167d9a26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет следующее состояние объекта.  <br /></td></tr>
+<tr class="memitem:aa5365ab557ae47efffdf14ba7a46dac8" id="r_aa5365ab557ae47efffdf14ba7a46dac8"><td class="memItemLeft">virtual string&#160;</td><td class="memItemRight"><a class="el" href="#aa5365ab557ae47efffdf14ba7a46dac8">getName</a> () const =0</td></tr>
+<tr class="memdesc:aa5365ab557ae47efffdf14ba7a46dac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает название математической модели.  <br /></td></tr>
+<tr class="memitem:a6e2f20f21dccde450c3eb1b8eef3126b" id="r_a6e2f20f21dccde450c3eb1b8eef3126b"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a6e2f20f21dccde450c3eb1b8eef3126b">reset</a> ()=0</td></tr>
+<tr class="memdesc:a6e2f20f21dccde450c3eb1b8eef3126b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает внутреннее состояние модели.  <br /></td></tr>
+<tr class="memitem:a2efbe4ec768191fa70ad86f260ec2fd6" id="r_a2efbe4ec768191fa70ad86f260ec2fd6"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#a2efbe4ec768191fa70ad86f260ec2fd6">~Model</a> ()=default</td></tr>
+<tr class="memdesc:a2efbe4ec768191fa70ad86f260ec2fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор базового класса.  <br /></td></tr>
+<tr class="memitem:a8fe23512f258047970c8bed167d9a26d" id="r_a8fe23512f258047970c8bed167d9a26d"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a8fe23512f258047970c8bed167d9a26d">calculateNext</a> (double y, double u, double dt)=0</td></tr>
+<tr class="memdesc:a8fe23512f258047970c8bed167d9a26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет следующее состояние объекта.  <br /></td></tr>
+<tr class="memitem:aa5365ab557ae47efffdf14ba7a46dac8" id="r_aa5365ab557ae47efffdf14ba7a46dac8"><td class="memItemLeft">virtual string&#160;</td><td class="memItemRight"><a class="el" href="#aa5365ab557ae47efffdf14ba7a46dac8">getName</a> () const =0</td></tr>
+<tr class="memdesc:aa5365ab557ae47efffdf14ba7a46dac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает название математической модели.  <br /></td></tr>
+<tr class="memitem:a6e2f20f21dccde450c3eb1b8eef3126b" id="r_a6e2f20f21dccde450c3eb1b8eef3126b"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a6e2f20f21dccde450c3eb1b8eef3126b">reset</a> ()=0</td></tr>
+<tr class="memdesc:a6e2f20f21dccde450c3eb1b8eef3126b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает внутреннее состояние модели.  <br /></td></tr>
+<tr class="memitem:a2efbe4ec768191fa70ad86f260ec2fd6" id="r_a2efbe4ec768191fa70ad86f260ec2fd6"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#a2efbe4ec768191fa70ad86f260ec2fd6">~Model</a> ()=default</td></tr>
+<tr class="memdesc:a2efbe4ec768191fa70ad86f260ec2fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор базового класса.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Абстрактный базовый класс математической модели. </p>
+<p>Класс <a class="el" href="class_model.html" title="Абстрактный базовый класс математической модели.">Model</a> задаёт общий интерфейс для всех математических моделей объекта управления.</p>
+<p>Благодаря механизму полиморфизма с объектами разных моделей можно работать через общий указатель или ссылку типа <a class="el" href="class_model.html" title="Абстрактный базовый класс математической модели.">Model</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="laba3_2models_8hpp_source.html">models.hpp</a> строка <a class="el" href="laba3_2models_8hpp_source.html#l00018">18</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a2efbe4ec768191fa70ad86f260ec2fd6" name="a2efbe4ec768191fa70ad86f260ec2fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efbe4ec768191fa70ad86f260ec2fd6">&#9670;&#160;</a></span>~Model() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Model::~Model </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виртуальный деструктор базового класса. </p>
+<p>Обеспечивает корректное удаление объектов производных классов через указатель на базовый класс <a class="el" href="class_model.html" title="Абстрактный базовый класс математической модели.">Model</a>. </p>
+
+</div>
+</div>
+<a id="a2efbe4ec768191fa70ad86f260ec2fd6" name="a2efbe4ec768191fa70ad86f260ec2fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efbe4ec768191fa70ad86f260ec2fd6">&#9670;&#160;</a></span>~Model() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Model::~Model </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виртуальный деструктор базового класса. </p>
+<p>Обеспечивает корректное удаление объектов производных классов через указатель на базовый класс <a class="el" href="class_model.html" title="Абстрактный базовый класс математической модели.">Model</a>. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a8fe23512f258047970c8bed167d9a26d" name="a8fe23512f258047970c8bed167d9a26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe23512f258047970c8bed167d9a26d">&#9670;&#160;</a></span>calculateNext() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Model::calculateNext </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет следующее состояние объекта. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Текущее значение выходной переменной. </td></tr>
+    <tr><td class="paramname">u</td><td>Управляющее воздействие. </td></tr>
+    <tr><td class="paramname">dt</td><td>Шаг дискретизации по времени. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новое значение выходной переменной. </dd></dl>
+
+<p>Замещается в <a class="el" href="class_model1__10.html#a1ab9bfbb09fcbdfe70ebd432950a5b6e">Model1_10</a>, <a class="el" href="class_model1__10.html#a1ab9bfbb09fcbdfe70ebd432950a5b6e">Model1_10</a>, <a class="el" href="class_model2__4.html#a8e1ed26066ffb2e6a43cfcac45bc7e42">Model2_4</a>, <a class="el" href="class_model2__4.html#a8e1ed26066ffb2e6a43cfcac45bc7e42">Model2_4</a>, <a class="el" href="class_model3__8.html#a3af6c9d8774e93e1217cd1884a36e11d">Model3_8</a> и <a class="el" href="class_model3__8.html#a3af6c9d8774e93e1217cd1884a36e11d">Model3_8</a>.</p>
+
+</div>
+</div>
+<a id="a8fe23512f258047970c8bed167d9a26d" name="a8fe23512f258047970c8bed167d9a26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe23512f258047970c8bed167d9a26d">&#9670;&#160;</a></span>calculateNext() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Model::calculateNext </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет следующее состояние объекта. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Текущее значение выходной переменной. </td></tr>
+    <tr><td class="paramname">u</td><td>Управляющее воздействие. </td></tr>
+    <tr><td class="paramname">dt</td><td>Шаг дискретизации по времени. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новое значение выходной переменной. </dd></dl>
+
+<p>Замещается в <a class="el" href="class_model1__10.html#a1ab9bfbb09fcbdfe70ebd432950a5b6e">Model1_10</a>, <a class="el" href="class_model1__10.html#a1ab9bfbb09fcbdfe70ebd432950a5b6e">Model1_10</a>, <a class="el" href="class_model2__4.html#a8e1ed26066ffb2e6a43cfcac45bc7e42">Model2_4</a>, <a class="el" href="class_model2__4.html#a8e1ed26066ffb2e6a43cfcac45bc7e42">Model2_4</a>, <a class="el" href="class_model3__8.html#a3af6c9d8774e93e1217cd1884a36e11d">Model3_8</a> и <a class="el" href="class_model3__8.html#a3af6c9d8774e93e1217cd1884a36e11d">Model3_8</a>.</p>
+
+</div>
+</div>
+<a id="aa5365ab557ae47efffdf14ba7a46dac8" name="aa5365ab557ae47efffdf14ba7a46dac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5365ab557ae47efffdf14ba7a46dac8">&#9670;&#160;</a></span>getName() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual string Model::getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает название математической модели. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка с названием модели. </dd></dl>
+
+<p>Замещается в <a class="el" href="class_model1__10.html#af054df99de71356e47615332047cae69">Model1_10</a>, <a class="el" href="class_model1__10.html#af054df99de71356e47615332047cae69">Model1_10</a>, <a class="el" href="class_model2__4.html#a89dd67f51487e4cc5197cb624914d30c">Model2_4</a>, <a class="el" href="class_model2__4.html#a89dd67f51487e4cc5197cb624914d30c">Model2_4</a>, <a class="el" href="class_model3__8.html#a0d5637039675ffd63997b58bc88bae03">Model3_8</a> и <a class="el" href="class_model3__8.html#a0d5637039675ffd63997b58bc88bae03">Model3_8</a>.</p>
+
+</div>
+</div>
+<a id="aa5365ab557ae47efffdf14ba7a46dac8" name="aa5365ab557ae47efffdf14ba7a46dac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5365ab557ae47efffdf14ba7a46dac8">&#9670;&#160;</a></span>getName() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual string Model::getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает название математической модели. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка с названием модели. </dd></dl>
+
+<p>Замещается в <a class="el" href="class_model1__10.html#af054df99de71356e47615332047cae69">Model1_10</a>, <a class="el" href="class_model1__10.html#af054df99de71356e47615332047cae69">Model1_10</a>, <a class="el" href="class_model2__4.html#a89dd67f51487e4cc5197cb624914d30c">Model2_4</a>, <a class="el" href="class_model2__4.html#a89dd67f51487e4cc5197cb624914d30c">Model2_4</a>, <a class="el" href="class_model3__8.html#a0d5637039675ffd63997b58bc88bae03">Model3_8</a> и <a class="el" href="class_model3__8.html#a0d5637039675ffd63997b58bc88bae03">Model3_8</a>.</p>
+
+</div>
+</div>
+<a id="a6e2f20f21dccde450c3eb1b8eef3126b" name="a6e2f20f21dccde450c3eb1b8eef3126b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2f20f21dccde450c3eb1b8eef3126b">&#9670;&#160;</a></span>reset() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Model::reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сбрасывает внутреннее состояние модели. </p>
+<p>Используется перед началом нового эксперимента, чтобы предыдущие вычисления не влияли на результат. </p>
+
+<p>Замещается в <a class="el" href="class_model1__10.html#a376d1d9647730bf867c3350bdcaae8b7">Model1_10</a>, <a class="el" href="class_model1__10.html#a376d1d9647730bf867c3350bdcaae8b7">Model1_10</a>, <a class="el" href="class_model2__4.html#a739804996b8d16ccb01a79d664233f3d">Model2_4</a>, <a class="el" href="class_model2__4.html#a739804996b8d16ccb01a79d664233f3d">Model2_4</a>, <a class="el" href="class_model3__8.html#a63244a851eb046582e26a5bb02f9918d">Model3_8</a> и <a class="el" href="class_model3__8.html#a63244a851eb046582e26a5bb02f9918d">Model3_8</a>.</p>
+
+</div>
+</div>
+<a id="a6e2f20f21dccde450c3eb1b8eef3126b" name="a6e2f20f21dccde450c3eb1b8eef3126b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2f20f21dccde450c3eb1b8eef3126b">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Model::reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сбрасывает внутреннее состояние модели. </p>
+<p>Используется перед началом нового эксперимента, чтобы предыдущие вычисления не влияли на результат. </p>
+
+<p>Замещается в <a class="el" href="class_model1__10.html#a376d1d9647730bf867c3350bdcaae8b7">Model1_10</a>, <a class="el" href="class_model1__10.html#a376d1d9647730bf867c3350bdcaae8b7">Model1_10</a>, <a class="el" href="class_model2__4.html#a739804996b8d16ccb01a79d664233f3d">Model2_4</a>, <a class="el" href="class_model2__4.html#a739804996b8d16ccb01a79d664233f3d">Model2_4</a>, <a class="el" href="class_model3__8.html#a63244a851eb046582e26a5bb02f9918d">Model3_8</a> и <a class="el" href="class_model3__8.html#a63244a851eb046582e26a5bb02f9918d">Model3_8</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/laba3/<a class="el" href="laba3_2models_8hpp_source.html">models.hpp</a></li>
+<li>src/<a class="el" href="models_8hpp_source.html">models.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_model.html">Model</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

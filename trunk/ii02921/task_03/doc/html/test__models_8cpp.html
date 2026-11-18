@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Task 03 - PID Controller: Файл test/test_models.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Task 03 - PID Controller<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Система автоматического управления на основе ПИД-регулятора</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('test__models_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл test_models.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;models.hpp&quot;</code><br />
+</div>
+<p><a href="test__models_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a5273b5bdb49c0cdfef92c99887212c9d" id="r_a5273b5bdb49c0cdfef92c99887212c9d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5273b5bdb49c0cdfef92c99887212c9d">TEST</a> (ModelsTest, LinearModelCalculatesCorrectly)</td></tr>
+<tr class="memitem:a3ed897bf1c0f3cebcc0d07c346e372c6" id="r_a3ed897bf1c0f3cebcc0d07c346e372c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3ed897bf1c0f3cebcc0d07c346e372c6">TEST</a> (ModelsTest, LinearModelShowsDelayEffect)</td></tr>
+<tr class="memitem:a47beb8d0d02fdc8b88a7bccf8b3e78cf" id="r_a47beb8d0d02fdc8b88a7bccf8b3e78cf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a47beb8d0d02fdc8b88a7bccf8b3e78cf">TEST</a> (ModelsTest, LinearModelResetClearsInputHistory)</td></tr>
+<tr class="memitem:a79988389c986dbe74aeb07ac998ca873" id="r_a79988389c986dbe74aeb07ac998ca873"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a79988389c986dbe74aeb07ac998ca873">TEST</a> (ModelsTest, NonlinearModelCalculatesCorrectly)</td></tr>
+<tr class="memitem:a0d7286545560ec2b2c3d97791a9fa4b6" id="r_a0d7286545560ec2b2c3d97791a9fa4b6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0d7286545560ec2b2c3d97791a9fa4b6">TEST</a> (ModelsTest, NonlinearModelHandlesNegativeInput)</td></tr>
+<tr class="memitem:ac98dcc1049cd40b412846aa1e8ea062b" id="r_ac98dcc1049cd40b412846aa1e8ea062b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac98dcc1049cd40b412846aa1e8ea062b">TEST</a> (ModelsTest, DifferentialModelUsesEulerMethod)</td></tr>
+<tr class="memitem:ac4fcc18d5db21006921a9b758b9584cb" id="r_ac4fcc18d5db21006921a9b758b9584cb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac4fcc18d5db21006921a9b758b9584cb">TEST</a> (ModelsTest, DifferentialModelQuadraticTermSlowsGrowth)</td></tr>
+<tr class="memitem:a0425e07c576d0d6e902ca5bc1969a83c" id="r_a0425e07c576d0d6e902ca5bc1969a83c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0425e07c576d0d6e902ca5bc1969a83c">TEST</a> (ModelsTest, AllModelsReturnCorrectNames)</td></tr>
+<tr class="memitem:a80a8ac1ad7faf62be2ea294aba0d1681" id="r_a80a8ac1ad7faf62be2ea294aba0d1681"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a80a8ac1ad7faf62be2ea294aba0d1681">TEST</a> (ModelsTest, PolymorphicCallThroughBasePointer)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="a0425e07c576d0d6e902ca5bc1969a83c" name="a0425e07c576d0d6e902ca5bc1969a83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0425e07c576d0d6e902ca5bc1969a83c">&#9670;&#160;</a></span>TEST() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AllModelsReturnCorrectNames</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00121">121</a></p>
+
+</div>
+</div>
+<a id="ac4fcc18d5db21006921a9b758b9584cb" name="ac4fcc18d5db21006921a9b758b9584cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fcc18d5db21006921a9b758b9584cb">&#9670;&#160;</a></span>TEST() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DifferentialModelQuadraticTermSlowsGrowth</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a id="ac98dcc1049cd40b412846aa1e8ea062b" name="ac98dcc1049cd40b412846aa1e8ea062b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac98dcc1049cd40b412846aa1e8ea062b">&#9670;&#160;</a></span>TEST() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DifferentialModelUsesEulerMethod</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00091">91</a></p>
+
+</div>
+</div>
+<a id="a5273b5bdb49c0cdfef92c99887212c9d" name="a5273b5bdb49c0cdfef92c99887212c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5273b5bdb49c0cdfef92c99887212c9d">&#9670;&#160;</a></span>TEST() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LinearModelCalculatesCorrectly</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00009">9</a></p>
+
+</div>
+</div>
+<a id="a47beb8d0d02fdc8b88a7bccf8b3e78cf" name="a47beb8d0d02fdc8b88a7bccf8b3e78cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47beb8d0d02fdc8b88a7bccf8b3e78cf">&#9670;&#160;</a></span>TEST() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LinearModelResetClearsInputHistory</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a id="a3ed897bf1c0f3cebcc0d07c346e372c6" name="a3ed897bf1c0f3cebcc0d07c346e372c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed897bf1c0f3cebcc0d07c346e372c6">&#9670;&#160;</a></span>TEST() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LinearModelShowsDelayEffect</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a id="a79988389c986dbe74aeb07ac998ca873" name="a79988389c986dbe74aeb07ac998ca873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79988389c986dbe74aeb07ac998ca873">&#9670;&#160;</a></span>TEST() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NonlinearModelCalculatesCorrectly</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a id="a0d7286545560ec2b2c3d97791a9fa4b6" name="a0d7286545560ec2b2c3d97791a9fa4b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7286545560ec2b2c3d97791a9fa4b6">&#9670;&#160;</a></span>TEST() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NonlinearModelHandlesNegativeInput</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00074">74</a></p>
+
+</div>
+</div>
+<a id="a80a8ac1ad7faf62be2ea294aba0d1681" name="a80a8ac1ad7faf62be2ea294aba0d1681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80a8ac1ad7faf62be2ea294aba0d1681">&#9670;&#160;</a></span>TEST() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">ModelsTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PolymorphicCallThroughBasePointer</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="test__models_8cpp_source.html">test_models.cpp</a> строка <a class="el" href="test__models_8cpp_source.html#l00135">135</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a href="test__models_8cpp.html">test_models.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

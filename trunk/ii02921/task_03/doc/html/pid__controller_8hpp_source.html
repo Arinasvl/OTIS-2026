@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Task 03 - PID Controller: Исходный файл src/pid_controller.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Task 03 - PID Controller<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Система автоматического управления на основе ПИД-регулятора</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('pid__controller_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pid_controller.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pid__controller_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="class_p_i_d_controller.html#a36dc82ad525870f8eb2472b3016c1646">PIDController</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// Коэффициенты PID-регулятора.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#af4d8460f8ad6f90e600629e8f2fd33e0">   18</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#af4d8460f8ad6f90e600629e8f2fd33e0">m_kp</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#a5277743c7d0a4c51cb5067459ebf495b">   19</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#a5277743c7d0a4c51cb5067459ebf495b">m_ki</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#afc4a0a86ab5bcfd2ab5e202a23135521">   20</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#afc4a0a86ab5bcfd2ab5e202a23135521">m_kd</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Границы допустимого управляющего воздействия.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#a67a6f7e473395456698f164994bc25f5">   23</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#a67a6f7e473395456698f164994bc25f5">m_minOutput</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#a42ba93bdb45566b4835c5f3eef27b51b">   24</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#a42ba93bdb45566b4835c5f3eef27b51b">m_maxOutput</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// История ошибок регулирования.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#a0de679aa894ecace1ebbc529a66084c4">   27</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#a0de679aa894ecace1ebbc529a66084c4">m_previousError</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#a849f0769b5fceea71fe9dbe41cf35021">   28</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#a849f0769b5fceea71fe9dbe41cf35021">m_previousError2</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Управляющее воздействие на предыдущем шаге.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_p_i_d_controller.html#a40102677c77092cacb714b538d95445c">   31</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_p_i_d_controller.html#a40102677c77092cacb714b538d95445c">m_previousOutput</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_p_i_d_controller.html#a36dc82ad525870f8eb2472b3016c1646">PIDController</a>(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">double</span> kp,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">double</span> ki,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">double</span> kd,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">double</span> minOutput,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">double</span> maxOutput</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    );</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_p_i_d_controller.html#a69c4e03b948cf48f70e0dc2fd2e0dc15">calculate</a>(<span class="keywordtype">double</span> error, <span class="keywordtype">double</span> dt);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_i_d_controller.html#a246a3a33197adbc8481540e7b9ad8b06">reset</a>(<span class="keywordtype">double</span> initialOutput = 0.0);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_p_i_d_controller.html#a5e86764275e89e73262f1dcd7b80ede4">getKp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_p_i_d_controller.html#a1ef7e1ff9495459294d337809b8bf9ad">getKi</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_p_i_d_controller.html#ad1446af540c140abfba2919d0e8d2c22">getKd</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_p_i_d_controller.html#a7ccd3bcdb8b21d7ba78a22a4cc379c42">getOutput</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a0de679aa894ecace1ebbc529a66084c4"><div class="ttname"><a href="class_p_i_d_controller.html#a0de679aa894ecace1ebbc529a66084c4">PIDController::m_previousError</a></div><div class="ttdeci">double m_previousError</div><div class="ttdef"><b>Определения</b> <a href="#l00027">pid_controller.hpp:27</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a1ef7e1ff9495459294d337809b8bf9ad"><div class="ttname"><a href="class_p_i_d_controller.html#a1ef7e1ff9495459294d337809b8bf9ad">PIDController::getKi</a></div><div class="ttdeci">double getKi() const</div><div class="ttdoc">Возвращает коэффициент интегральной составляющей.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00124">pid_controller.cpp:124</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a246a3a33197adbc8481540e7b9ad8b06"><div class="ttname"><a href="class_p_i_d_controller.html#a246a3a33197adbc8481540e7b9ad8b06">PIDController::reset</a></div><div class="ttdeci">void reset(double initialOutput=0.0)</div><div class="ttdoc">Сбрасывает внутреннее состояние регулятора.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00098">pid_controller.cpp:98</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a36dc82ad525870f8eb2472b3016c1646"><div class="ttname"><a href="class_p_i_d_controller.html#a36dc82ad525870f8eb2472b3016c1646">PIDController::PIDController</a></div><div class="ttdeci">PIDController(double kp, double ki, double kd, double minOutput, double maxOutput)</div><div class="ttdoc">Конструктор PID-регулятора.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00010">pid_controller.cpp:10</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a40102677c77092cacb714b538d95445c"><div class="ttname"><a href="class_p_i_d_controller.html#a40102677c77092cacb714b538d95445c">PIDController::m_previousOutput</a></div><div class="ttdeci">double m_previousOutput</div><div class="ttdef"><b>Определения</b> <a href="#l00031">pid_controller.hpp:31</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a42ba93bdb45566b4835c5f3eef27b51b"><div class="ttname"><a href="class_p_i_d_controller.html#a42ba93bdb45566b4835c5f3eef27b51b">PIDController::m_maxOutput</a></div><div class="ttdeci">double m_maxOutput</div><div class="ttdef"><b>Определения</b> <a href="#l00024">pid_controller.hpp:24</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a5277743c7d0a4c51cb5067459ebf495b"><div class="ttname"><a href="class_p_i_d_controller.html#a5277743c7d0a4c51cb5067459ebf495b">PIDController::m_ki</a></div><div class="ttdeci">double m_ki</div><div class="ttdef"><b>Определения</b> <a href="#l00019">pid_controller.hpp:19</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a5e86764275e89e73262f1dcd7b80ede4"><div class="ttname"><a href="class_p_i_d_controller.html#a5e86764275e89e73262f1dcd7b80ede4">PIDController::getKp</a></div><div class="ttdeci">double getKp() const</div><div class="ttdoc">Возвращает коэффициент пропорциональной составляющей.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00115">pid_controller.cpp:115</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a67a6f7e473395456698f164994bc25f5"><div class="ttname"><a href="class_p_i_d_controller.html#a67a6f7e473395456698f164994bc25f5">PIDController::m_minOutput</a></div><div class="ttdeci">double m_minOutput</div><div class="ttdef"><b>Определения</b> <a href="#l00023">pid_controller.hpp:23</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a69c4e03b948cf48f70e0dc2fd2e0dc15"><div class="ttname"><a href="class_p_i_d_controller.html#a69c4e03b948cf48f70e0dc2fd2e0dc15">PIDController::calculate</a></div><div class="ttdeci">double calculate(double error, double dt)</div><div class="ttdoc">Рассчитывает новое управляющее воздействие.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00039">pid_controller.cpp:39</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a7ccd3bcdb8b21d7ba78a22a4cc379c42"><div class="ttname"><a href="class_p_i_d_controller.html#a7ccd3bcdb8b21d7ba78a22a4cc379c42">PIDController::getOutput</a></div><div class="ttdeci">double getOutput() const</div><div class="ttdoc">Возвращает последнее управляющее воздействие.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00142">pid_controller.cpp:142</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_a849f0769b5fceea71fe9dbe41cf35021"><div class="ttname"><a href="class_p_i_d_controller.html#a849f0769b5fceea71fe9dbe41cf35021">PIDController::m_previousError2</a></div><div class="ttdeci">double m_previousError2</div><div class="ttdef"><b>Определения</b> <a href="#l00028">pid_controller.hpp:28</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_ad1446af540c140abfba2919d0e8d2c22"><div class="ttname"><a href="class_p_i_d_controller.html#ad1446af540c140abfba2919d0e8d2c22">PIDController::getKd</a></div><div class="ttdeci">double getKd() const</div><div class="ttdoc">Возвращает коэффициент дифференциальной составляющей.</div><div class="ttdef"><b>Определения</b> <a href="pid__controller_8cpp_source.html#l00133">pid_controller.cpp:133</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_af4d8460f8ad6f90e600629e8f2fd33e0"><div class="ttname"><a href="class_p_i_d_controller.html#af4d8460f8ad6f90e600629e8f2fd33e0">PIDController::m_kp</a></div><div class="ttdeci">double m_kp</div><div class="ttdef"><b>Определения</b> <a href="#l00018">pid_controller.hpp:18</a></div></div>
+<div class="ttc" id="aclass_p_i_d_controller_html_afc4a0a86ab5bcfd2ab5e202a23135521"><div class="ttname"><a href="class_p_i_d_controller.html#afc4a0a86ab5bcfd2ab5e202a23135521">PIDController::m_kd</a></div><div class="ttdeci">double m_kd</div><div class="ttdef"><b>Определения</b> <a href="#l00020">pid_controller.hpp:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="pid__controller_8hpp.html">pid_controller.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

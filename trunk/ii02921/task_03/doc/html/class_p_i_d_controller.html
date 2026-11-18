@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Task 03 - PID Controller: Класс PIDController</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Task 03 - PID Controller<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Система автоматического управления на основе ПИД-регулятора</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_p_i_d_controller.html','','class_p_i_d_controller-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс PIDController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс цифрового PID-регулятора.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a36dc82ad525870f8eb2472b3016c1646" id="r_a36dc82ad525870f8eb2472b3016c1646"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a36dc82ad525870f8eb2472b3016c1646">PIDController</a> (double kp, double ki, double kd, double minOutput, double maxOutput)</td></tr>
+<tr class="memdesc:a36dc82ad525870f8eb2472b3016c1646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор PID-регулятора.  <br /></td></tr>
+<tr class="memitem:a69c4e03b948cf48f70e0dc2fd2e0dc15" id="r_a69c4e03b948cf48f70e0dc2fd2e0dc15"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a69c4e03b948cf48f70e0dc2fd2e0dc15">calculate</a> (double error, double dt)</td></tr>
+<tr class="memdesc:a69c4e03b948cf48f70e0dc2fd2e0dc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Рассчитывает новое управляющее воздействие.  <br /></td></tr>
+<tr class="memitem:a246a3a33197adbc8481540e7b9ad8b06" id="r_a246a3a33197adbc8481540e7b9ad8b06"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a246a3a33197adbc8481540e7b9ad8b06">reset</a> (double initialOutput=0.0)</td></tr>
+<tr class="memdesc:a246a3a33197adbc8481540e7b9ad8b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает внутреннее состояние регулятора.  <br /></td></tr>
+<tr class="memitem:a5e86764275e89e73262f1dcd7b80ede4" id="r_a5e86764275e89e73262f1dcd7b80ede4"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a5e86764275e89e73262f1dcd7b80ede4">getKp</a> () const</td></tr>
+<tr class="memdesc:a5e86764275e89e73262f1dcd7b80ede4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает коэффициент пропорциональной составляющей.  <br /></td></tr>
+<tr class="memitem:a1ef7e1ff9495459294d337809b8bf9ad" id="r_a1ef7e1ff9495459294d337809b8bf9ad"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a1ef7e1ff9495459294d337809b8bf9ad">getKi</a> () const</td></tr>
+<tr class="memdesc:a1ef7e1ff9495459294d337809b8bf9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает коэффициент интегральной составляющей.  <br /></td></tr>
+<tr class="memitem:ad1446af540c140abfba2919d0e8d2c22" id="r_ad1446af540c140abfba2919d0e8d2c22"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ad1446af540c140abfba2919d0e8d2c22">getKd</a> () const</td></tr>
+<tr class="memdesc:ad1446af540c140abfba2919d0e8d2c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает коэффициент дифференциальной составляющей.  <br /></td></tr>
+<tr class="memitem:a7ccd3bcdb8b21d7ba78a22a4cc379c42" id="r_a7ccd3bcdb8b21d7ba78a22a4cc379c42"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a7ccd3bcdb8b21d7ba78a22a4cc379c42">getOutput</a> () const</td></tr>
+<tr class="memdesc:a7ccd3bcdb8b21d7ba78a22a4cc379c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает последнее управляющее воздействие.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:af4d8460f8ad6f90e600629e8f2fd33e0" id="r_af4d8460f8ad6f90e600629e8f2fd33e0"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af4d8460f8ad6f90e600629e8f2fd33e0">m_kp</a></td></tr>
+<tr class="memitem:a5277743c7d0a4c51cb5067459ebf495b" id="r_a5277743c7d0a4c51cb5067459ebf495b"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a5277743c7d0a4c51cb5067459ebf495b">m_ki</a></td></tr>
+<tr class="memitem:afc4a0a86ab5bcfd2ab5e202a23135521" id="r_afc4a0a86ab5bcfd2ab5e202a23135521"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#afc4a0a86ab5bcfd2ab5e202a23135521">m_kd</a></td></tr>
+<tr class="memitem:a67a6f7e473395456698f164994bc25f5" id="r_a67a6f7e473395456698f164994bc25f5"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a67a6f7e473395456698f164994bc25f5">m_minOutput</a></td></tr>
+<tr class="memitem:a42ba93bdb45566b4835c5f3eef27b51b" id="r_a42ba93bdb45566b4835c5f3eef27b51b"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a42ba93bdb45566b4835c5f3eef27b51b">m_maxOutput</a></td></tr>
+<tr class="memitem:a0de679aa894ecace1ebbc529a66084c4" id="r_a0de679aa894ecace1ebbc529a66084c4"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a0de679aa894ecace1ebbc529a66084c4">m_previousError</a></td></tr>
+<tr class="memitem:a849f0769b5fceea71fe9dbe41cf35021" id="r_a849f0769b5fceea71fe9dbe41cf35021"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a849f0769b5fceea71fe9dbe41cf35021">m_previousError2</a></td></tr>
+<tr class="memitem:a40102677c77092cacb714b538d95445c" id="r_a40102677c77092cacb714b538d95445c"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a40102677c77092cacb714b538d95445c">m_previousOutput</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс цифрового PID-регулятора. </p>
+<p>Реализует алгоритм автоматического регулирования в инкрементальной форме.</p>
+<p>Регулятор рассчитывает приращение управляющего воздействия на основании текущей и двух предыдущих ошибок. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00013">13</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a36dc82ad525870f8eb2472b3016c1646" name="a36dc82ad525870f8eb2472b3016c1646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36dc82ad525870f8eb2472b3016c1646">&#9670;&#160;</a></span>PIDController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PIDController::PIDController </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>kp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ki</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>kd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>minOutput</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>maxOutput</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор PID-регулятора. </p>
+<p>Создаёт PID-регулятор и задаёт его параметры.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kp</td><td>Коэффициент пропорционального усиления. </td></tr>
+    <tr><td class="paramname">ki</td><td>Коэффициент интегрального усиления. </td></tr>
+    <tr><td class="paramname">kd</td><td>Коэффициент дифференциального усиления. </td></tr>
+    <tr><td class="paramname">minOutput</td><td>Минимальное управляющее воздействие. </td></tr>
+    <tr><td class="paramname">maxOutput</td><td>Максимальное управляющее воздействие. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00010">10</a></p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a69c4e03b948cf48f70e0dc2fd2e0dc15" name="a69c4e03b948cf48f70e0dc2fd2e0dc15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c4e03b948cf48f70e0dc2fd2e0dc15">&#9670;&#160;</a></span>calculate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::calculate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>error</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Рассчитывает новое управляющее воздействие. </p>
+<p>Рассчитывает управляющее воздействие.</p>
+<p>Используется инкрементальный алгоритм PID:</p>
+<p>deltaU = Kp*(e - e1)</p><ul>
+<li>Ki*e*dt</li>
+<li>Kd/dt*(e - 2*e1 + e2)</li>
+</ul>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>Текущая ошибка регулирования. </td></tr>
+    <tr><td class="paramname">dt</td><td>Шаг дискретизации по времени. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новое управляющее воздействие. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a id="ad1446af540c140abfba2919d0e8d2c22" name="ad1446af540c140abfba2919d0e8d2c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1446af540c140abfba2919d0e8d2c22">&#9670;&#160;</a></span>getKd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::getKd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает коэффициент дифференциальной составляющей. </p>
+<p>Возвращает коэффициент D. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00133">133</a></p>
+
+</div>
+</div>
+<a id="a1ef7e1ff9495459294d337809b8bf9ad" name="a1ef7e1ff9495459294d337809b8bf9ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ef7e1ff9495459294d337809b8bf9ad">&#9670;&#160;</a></span>getKi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::getKi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает коэффициент интегральной составляющей. </p>
+<p>Возвращает коэффициент I. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00124">124</a></p>
+
+</div>
+</div>
+<a id="a5e86764275e89e73262f1dcd7b80ede4" name="a5e86764275e89e73262f1dcd7b80ede4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e86764275e89e73262f1dcd7b80ede4">&#9670;&#160;</a></span>getKp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::getKp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает коэффициент пропорциональной составляющей. </p>
+<p>Возвращает коэффициент P. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00115">115</a></p>
+
+</div>
+</div>
+<a id="a7ccd3bcdb8b21d7ba78a22a4cc379c42" name="a7ccd3bcdb8b21d7ba78a22a4cc379c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ccd3bcdb8b21d7ba78a22a4cc379c42">&#9670;&#160;</a></span>getOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::getOutput </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает последнее управляющее воздействие. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00142">142</a></p>
+
+</div>
+</div>
+<a id="a246a3a33197adbc8481540e7b9ad8b06" name="a246a3a33197adbc8481540e7b9ad8b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246a3a33197adbc8481540e7b9ad8b06">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PIDController::reset </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>initialOutput</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сбрасывает внутреннее состояние регулятора. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialOutput</td><td>Начальное управляющее воздействие. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a> строка <a class="el" href="pid__controller_8cpp_source.html#l00098">98</a></p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="afc4a0a86ab5bcfd2ab5e202a23135521" name="afc4a0a86ab5bcfd2ab5e202a23135521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4a0a86ab5bcfd2ab5e202a23135521">&#9670;&#160;</a></span>m_kd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_kd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a id="a5277743c7d0a4c51cb5067459ebf495b" name="a5277743c7d0a4c51cb5067459ebf495b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5277743c7d0a4c51cb5067459ebf495b">&#9670;&#160;</a></span>m_ki</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_ki</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a id="af4d8460f8ad6f90e600629e8f2fd33e0" name="af4d8460f8ad6f90e600629e8f2fd33e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d8460f8ad6f90e600629e8f2fd33e0">&#9670;&#160;</a></span>m_kp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_kp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a id="a42ba93bdb45566b4835c5f3eef27b51b" name="a42ba93bdb45566b4835c5f3eef27b51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ba93bdb45566b4835c5f3eef27b51b">&#9670;&#160;</a></span>m_maxOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_maxOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a id="a67a6f7e473395456698f164994bc25f5" name="a67a6f7e473395456698f164994bc25f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a6f7e473395456698f164994bc25f5">&#9670;&#160;</a></span>m_minOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_minOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a id="a0de679aa894ecace1ebbc529a66084c4" name="a0de679aa894ecace1ebbc529a66084c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de679aa894ecace1ebbc529a66084c4">&#9670;&#160;</a></span>m_previousError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_previousError</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="a849f0769b5fceea71fe9dbe41cf35021" name="a849f0769b5fceea71fe9dbe41cf35021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849f0769b5fceea71fe9dbe41cf35021">&#9670;&#160;</a></span>m_previousError2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_previousError2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a id="a40102677c77092cacb714b538d95445c" name="a40102677c77092cacb714b538d95445c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40102677c77092cacb714b538d95445c">&#9670;&#160;</a></span>m_previousOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_previousOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a> строка <a class="el" href="pid__controller_8hpp_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="pid__controller_8hpp_source.html">pid_controller.hpp</a></li>
+<li>src/<a class="el" href="pid__controller_8cpp_source.html">pid_controller.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_p_i_d_controller.html">PIDController</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

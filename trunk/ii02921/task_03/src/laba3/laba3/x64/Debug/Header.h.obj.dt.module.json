@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "laba3\\x64\\Debug\\Header.h.obj.dt.obj",
+            "outputs": [
+                "laba3\\x64\\Debug\\Header.h.obj.dt.module.json",
+                "laba3\\x64\\Debug\\Header.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
