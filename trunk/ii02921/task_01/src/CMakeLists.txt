@@ -14,7 +14,6 @@ add_executable(SimulationModels_ii02921
     Model2_1.h
     Model3_7.cpp
     Model3_7.h
-    labaa.cpp
     labaa.h
 )
 
